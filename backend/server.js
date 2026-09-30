@@ -1,18 +1,3 @@
-/**
- * BACKEND DEMONSTRATIVO — HANDOFF DE TRIAGEM
- *
- * Executar:
- *   node server.js
- *
- * Depois, servir o front-end pelo mesmo host/reverse proxy ou ajustar
- * HANDOFF_ENDPOINT no js/script.js para http://localhost:3001/api/triagem/handoff
- *
- * IMPORTANTE:
- * Este exemplo ESCOLHE um especialista e recebe a triagem, mas a função
- * notifySpecialist() precisa ser conectada à API oficial do WhatsApp Business,
- * CRM ou plataforma omnichannel da ONG para realizar a entrega real.
- */
-
 const http = require("http");
 
 const PORT = 3001;

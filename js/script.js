@@ -4,15 +4,7 @@ const toast = document.getElementById("toast");
 
 const ONG_WHATSAPP = "5511999999999";
 
-/*
-  HANDOFF DA TRIAGEM
-  ------------------
-  Em produção, HANDOFF_ENDPOINT deve apontar para o backend/CRM da ONG.
-  Esse endpoint recebe o resumo da triagem, escolhe o especialista disponível,
-  entrega a triagem para ele e devolve o número/identificação do especialista.
 
-  O front-end NÃO deve decidir sozinho qual atendente está disponível.
-*/
 const HANDOFF_ENDPOINT = "/api/triagem/handoff";
 const FALLBACK_SPECIALIST_WHATSAPP = "5511999999999";
 
@@ -94,9 +86,6 @@ function showToast(message) {
   }, 3200);
 }
 
-/* =========================================================
-   PET MATCH
-   ========================================================= */
 
 const pets = [
   {
@@ -110,7 +99,7 @@ const pets = [
     vaccinated: "Vacinas em dia",
     neutered: "Castrada",
     temperament: ["Carinhosa", "Brincalhona", "Sociável"],
-    image: "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1000&q=88",
+    image: "imagens/pet-1552053831-71594a27632d.webp",
     story: "Nina é curiosa, muito ligada às pessoas e adora passeios. Foi acolhida após um resgate e já está pronta para conhecer uma família com tempo para brincar e oferecer companhia."
   },
   {
@@ -124,7 +113,7 @@ const pets = [
     vaccinated: "Vacinas em dia",
     neutered: "Castrado",
     temperament: ["Tranquilo", "Curioso", "Independente"],
-    image: "https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1000&q=88",
+    image: "imagens/pet-1574158622682-e40e69881006.webp",
     story: "Chico gosta de observar tudo antes de se aproximar. Depois que ganha confiança, procura carinho e companhia. Combina com uma casa tranquila e pessoas pacientes."
   },
   {
@@ -138,7 +127,7 @@ const pets = [
     vaccinated: "Vacinas em dia",
     neutered: "Castrada",
     temperament: ["Doce", "Companheira", "Calma"],
-    image: "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1000&q=88",
+    image: "imagens/pet-1517849845537-4d257902454a.webp",
     story: "Amora é daquelas que prefere ficar por perto. Gosta de carinho, rotina e ambientes acolhedores. Está saudável e pronta para uma adoção responsável."
   },
   {
@@ -152,7 +141,7 @@ const pets = [
     vaccinated: "Vacinas em dia",
     neutered: "Castrado",
     temperament: ["Afetuoso", "Observador", "Gentil"],
-    image: "https://images.unsplash.com/photo-1495360010541-f48722b34f7d?auto=format&fit=crop&w=1000&q=88",
+    image: "imagens/pet-1495360010541-f48722b34f7d.webp",
     story: "Theo é um gato gentil, que gosta de janelas, lugares altos e cochilos longos. Com pessoas conhecidas, se transforma em um verdadeiro parceiro de sofá."
   },
   {
@@ -166,7 +155,7 @@ const pets = [
     vaccinated: "Protocolo completo",
     neutered: "Castrado",
     temperament: ["Energético", "Divertido", "Amigável"],
-    image: "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=1000&q=88",
+    image: "imagens/pet-1537151608828-ea2b11777ee8.webp",
     story: "Bento ainda é filhote e tem energia de sobra. Precisa de uma família disposta a ensinar, passear e brincar bastante. Em troca, oferece alegria em tempo integral."
   },
   {
@@ -180,7 +169,7 @@ const pets = [
     vaccinated: "Vacinas em dia",
     neutered: "Castrada",
     temperament: ["Delicada", "Carinhosa", "Sossegada"],
-    image: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=1000&q=88",
+    image: "imagens/pet-1518791841217-8f162f1e1131.webp",
     story: "Luna é delicada e gosta de chegar no próprio tempo. Depois de se sentir segura, procura colo e carinho. Vai muito bem em ambientes internos e tranquilos."
   },
   {
@@ -194,7 +183,7 @@ const pets = [
     vaccinated: "Vacinas em dia",
     neutered: "Castrado",
     temperament: ["Leal", "Calmo", "Protetor"],
-    image: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1000&q=88",
+    image: "imagens/pet-1543466835-00a7907e9de1.webp",
     story: "Zeca é grande no tamanho e no coração. É equilibrado, gosta de companhia e passeios moderados. Procura uma família que tenha espaço e goste de cães companheiros."
   },
   {
@@ -208,7 +197,7 @@ const pets = [
     vaccinated: "Protocolo completo",
     neutered: "Castrada",
     temperament: ["Brincalhona", "Curiosa", "Sociável"],
-    image: "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1000&q=88",
+    image: "imagens/pet-1592194996308-7b43878e84a6.webp",
     story: "Mia é jovem, esperta e transforma qualquer objeto em brinquedo. Se adapta rápido e gosta de interação. Uma boa escolha para famílias que querem um pet ativo."
   }
 ];
@@ -787,7 +776,7 @@ function startAdoptionTriage(pet = null) {
     : `
       <article class="triage-pet-card">
         <img
-          src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=500&q=86"
+          src="imagens/pet-1552053831-71594a27632d.webp"
           alt="Golden Retriever, mascote da secretária virtual Nala">
         <div>
           <small>Triagem geral</small>
