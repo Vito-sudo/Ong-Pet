@@ -4,15 +4,7 @@ const toast = document.getElementById("toast");
 
 const ONG_WHATSAPP = "5511999999999";
 
-/*
-  HANDOFF DA TRIAGEM
-  ------------------
-  Em produção, HANDOFF_ENDPOINT deve apontar para o backend/CRM da ONG.
-  Esse endpoint recebe o resumo da triagem, escolhe o especialista disponível,
-  entrega a triagem para ele e devolve o número/identificação do especialista.
 
-  O front-end NÃO deve decidir sozinho qual atendente está disponível.
-*/
 const HANDOFF_ENDPOINT = "/api/triagem/handoff";
 const FALLBACK_SPECIALIST_WHATSAPP = "5511999999999";
 
@@ -94,9 +86,6 @@ function showToast(message) {
   }, 3200);
 }
 
-/* =========================================================
-   PET MATCH
-   ========================================================= */
 
 const pets = [
   {
